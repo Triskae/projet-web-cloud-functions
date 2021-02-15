@@ -5,7 +5,7 @@ namespace ProjetWeb.Models
 {
     public class Order
     {
-        public int OrderId { get; set; }
+        public string id { get; set; }
         public DateTime OrderPlacedDate { get; set; }
         public bool IsPayed { get; set; }
 

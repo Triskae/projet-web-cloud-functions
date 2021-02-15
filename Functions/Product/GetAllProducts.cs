@@ -14,23 +14,12 @@ namespace ProjetWeb.Functions.Product
     {
         [FunctionName("getAllProducts")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            [CosmosDB("SampleDB", "Persons", ConnectionStringSetting ="CosmosDB")]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
+            [CosmosDB("ProjetWeb", "Products", ConnectionStringSetting ="CosmosDB")]
             IEnumerable<Models.Product> products,
             ILogger log)
         {
-            
-            string name = req.Query["name"];
-
-            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name = name ?? data?.name;
-
-            string responseMessage = string.IsNullOrEmpty(name)
-                ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
-
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(products);
         }
     }
 }
