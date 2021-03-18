@@ -27,7 +27,6 @@ namespace ProjetWeb.Functions.Product
                 var newProduct = new Models.Product
                 {
                     Title = data.Title,
-                    Category = data.Category,
                     Description = data.Description,
                     Price = data.Price,
                     Images = data.Images

@@ -8,7 +8,11 @@ namespace ProjetWeb.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }
-        public string Category { get; set; }
+        public string Year { get; set; }
+        
+        public int HorsePower { get; set; }
+        public int Mileage { get; set; }
+        public string Fuel { get; set; }
         public List<string> Images { get; set; }
 
         public int? OrderId { get; set; }

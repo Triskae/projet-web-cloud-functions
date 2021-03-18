@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -11,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace ProjetWeb.Functions.User
 {
-    public static class GetUserById
+    public class GetUserById
     {
         [FunctionName("GetUserById")]
         public static async Task<IActionResult> RunAsync(
@@ -29,7 +30,6 @@ namespace ProjetWeb.Functions.User
             return name != null
                 ? (ActionResult) new OkObjectResult($"Hello, {name}")
                 : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
-            
         }
     }
 }
