@@ -18,7 +18,7 @@ namespace ProjetWeb.Functions.Product
             Models.Product product,
             ILogger log)
         {
-            return new OkObjectResult(new Response<Models.Product>(product));
+            return new OkObjectResult(new BaseResponse<Models.Product>(product));
         }
     }
 }

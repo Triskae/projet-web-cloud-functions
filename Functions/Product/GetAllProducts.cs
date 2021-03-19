@@ -56,7 +56,7 @@ namespace ProjetWeb.Functions.Product
             }
 
             return new OkObjectResult(
-                new Response<List<Models.Product>>(query.ExecuteNextAsync<Models.Product>().Result.ToList()));
+                new BaseResponse<List<Models.Product>>(query.ExecuteNextAsync<Models.Product>().Result.ToList()));
         }
     }
 }
