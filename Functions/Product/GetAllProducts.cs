@@ -5,14 +5,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
+using ProjetWeb.Auth;
 using ProjetWeb.Models;
 
 namespace ProjetWeb.Functions.Product
 {
-    public static class GetAllProducts
+    public class GetAllProducts : AuthorizedServiceBase
     {
         [FunctionName("GetAllProducts")]
-        public static async Task<IActionResult> Run(
+        public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]
             HttpRequest req,
             [CosmosDB("ProjetWeb", "Products", ConnectionStringSetting = "CosmosDB")]

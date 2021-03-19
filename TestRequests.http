@@ -25,5 +25,14 @@ Content-Type: application/json
 
 ### --- User ---
 
+### Athenticate a user
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "user": "filipe",
+  "password": "Rammstein1998"
+}
+
 ### Register user
 
