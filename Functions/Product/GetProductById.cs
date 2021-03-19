@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
@@ -15,8 +14,7 @@ namespace ProjetWeb.Functions.Product
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]
             HttpRequest req,
-            [CosmosDB("ProjetWeb", "Products", ConnectionStringSetting = "CosmosDB", Id = "{Query.id}",
-                PartitionKey = "/title")]
+            [CosmosDB("ProjetWeb", "Products", ConnectionStringSetting = "CosmosDB", Id = "{Query.id}", PartitionKey = "{Query.id}")]
             Models.Product product,
             ILogger log)
         {
