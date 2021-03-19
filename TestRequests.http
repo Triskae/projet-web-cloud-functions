@@ -1,0 +1,29 @@
+### --- Product ---
+
+### GetAllProducts
+GET http://localhost:7071/api/GetAllProducts
+Accept: application/json
+
+### GetProductById
+GET http://localhost:7071/api/GetProductById?id=6d0f4761-3be2-4146-b297-1f4ccc9f521c
+Accept: application/json
+
+### Create Product
+POST http://localhost:7071/api/CreateProduct
+Content-Type: application/json
+
+{
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+### --- User ---
+
+### Register user
+

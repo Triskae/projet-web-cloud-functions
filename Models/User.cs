@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using ProjetWeb.Models;
 
-namespace ProjetWeb
+namespace ProjetWeb.Models
 {
     public class User
     {

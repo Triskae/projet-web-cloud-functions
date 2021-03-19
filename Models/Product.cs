@@ -9,7 +9,7 @@ namespace ProjetWeb.Models
         public string Description { get; set; }
         public int Price { get; set; }
         public string Year { get; set; }
-        
+
         public int HorsePower { get; set; }
         public int Mileage { get; set; }
         public string Fuel { get; set; }
@@ -17,7 +17,7 @@ namespace ProjetWeb.Models
 
         public int? OrderId { get; set; }
         public Order? Order { get; set; }
-            
+
         public int? CartId { get; set; }
         public Cart? Cart { get; set; }
     }

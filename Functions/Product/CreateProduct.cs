@@ -29,6 +29,10 @@ namespace ProjetWeb.Functions.Product
                     Title = data.Title,
                     Description = data.Description,
                     Price = data.Price,
+                    Year = data.Year,
+                    HorsePower = data.HorsePower,
+                    Mileage = data.Mileage,
+                    Fuel = data.Fuel,
                     Images = data.Images
                 };
                 await products.AddAsync(newProduct);
