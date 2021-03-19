@@ -25,7 +25,7 @@ namespace ProjetWeb.Auth
         {
             Dictionary<string, object> claims = new Dictionary<string, object>
             {
-                { "username", credentials.User },
+                { "username", credentials.Email },
                 { "role", "admin"}
             };
 

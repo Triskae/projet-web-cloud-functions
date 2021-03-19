@@ -11,6 +11,7 @@ namespace ProjetWeb
         public override void Configure(IFunctionsHostBuilder builder)
         {
             builder.Services.AddSingleton<TokenIssuer>();
+            builder.Services.AddSingleton<IPasswordProvider, PasswordProvider>();
         }
     }
 }
