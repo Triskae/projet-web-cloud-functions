@@ -1,24 +1,35 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ProjetWeb.Models
 {
     public class Product
     {
-        public string id { get; set; }
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; set; }
+        
+        [JsonProperty(PropertyName = "title")]
         public string Title { get; set; }
+        
+        [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
+        
+        [JsonProperty(PropertyName = "price")]
         public int Price { get; set; }
+        
+        [JsonProperty(PropertyName = "year")]
         public string Year { get; set; }
         
+        [JsonProperty(PropertyName = "horsepower")]
         public int HorsePower { get; set; }
+        
+        [JsonProperty(PropertyName = "mileage")]
         public int Mileage { get; set; }
+        
+        [JsonProperty(PropertyName = "fuel")]
         public string Fuel { get; set; }
+        
+        [JsonProperty(PropertyName = "images")]
         public List<string> Images { get; set; }
-
-        public int? OrderId { get; set; }
-        public Order? Order { get; set; }
-            
-        public int? CartId { get; set; }
-        public Cart? Cart { get; set; }
     }
 }

@@ -6,8 +6,15 @@
     <AssemblyName>ProjetWeb</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="./AppSettings.json" Link="AppSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.9" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="*" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
