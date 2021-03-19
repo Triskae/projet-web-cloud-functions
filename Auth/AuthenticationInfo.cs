@@ -10,7 +10,6 @@ namespace ProjetWeb.Auth
     {
         public bool IsValid { get; }
         public string Username { get; }
-        public string Role { get; }
 
         public AuthenticationInfo(HttpRequest request)
         {
@@ -61,7 +60,6 @@ namespace ProjetWeb.Auth
 
             IsValid = true;
             Username = Convert.ToString(claims["username"]);
-            Role = Convert.ToString(claims["role"]);
         }
     }
 }
