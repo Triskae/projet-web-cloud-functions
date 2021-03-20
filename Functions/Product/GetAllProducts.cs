@@ -28,7 +28,7 @@ namespace ProjetWeb.Functions.Product
         )
         {
             log.LogInformation("GetAllProducts");
-            
+
             var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Products");
             IDocumentQuery<Models.Product> query;
 
@@ -58,8 +58,22 @@ namespace ProjetWeb.Functions.Product
                 query = client.CreateDocumentQuery<Models.Product>(collectionUri).AsDocumentQuery();
             }
 
+            var everyProducts = req.Method == HttpMethods.Post
+                ? client
+                    .CreateDocumentQuery<Models.Product>(collectionUri)
+                    .AsDocumentQuery()
+                    .ExecuteNextAsync<Models.Product>().Result.ToList()
+                : query
+                    .ExecuteNextAsync<Models.Product>()
+                    .Result
+                    .ToList();
+
+            var minimumPrice = everyProducts.Min(x => x.Price);
+            var maximumPrice = everyProducts.Max(x => x.Price);
+
             return new OkObjectResult(
-                new BaseResponse<List<Models.Product>>(query.ExecuteNextAsync<Models.Product>().Result.ToList()));
+                new ProductResponse<List<Models.Product>>(query.ExecuteNextAsync<Models.Product>().Result.ToList(), minimumPrice,
+                    maximumPrice));
         }
     }
 }
