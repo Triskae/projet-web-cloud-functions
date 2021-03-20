@@ -62,7 +62,7 @@ namespace ProjetWeb.Functions.User
 
         [FunctionName("ChangePassword")]
         public async Task<IActionResult> ChangePassword(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "changepassword")]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
             HttpRequest req,
             ILogger log)
         {

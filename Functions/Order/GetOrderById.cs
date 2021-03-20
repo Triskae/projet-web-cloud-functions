@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using ProjetWeb.Auth;
 
 namespace ProjetWeb.Functions.Order
 {
-    public static class GetOrderById
+    public class GetOrderById : AuthorizedServiceBase
     {
         [FunctionName("GetOrderById")]
         public static async Task<IActionResult> RunAsync(

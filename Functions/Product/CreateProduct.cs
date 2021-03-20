@@ -9,13 +9,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using ProjetWeb.Auth;
 
 namespace ProjetWeb.Functions.Product
 {
-    public static class CreateProduct
+    public class CreateProduct : AuthorizedServiceBase
     {
         [FunctionName("CreateProduct")]
-        public static async Task<IActionResult> RunAsync(
+        public async Task<IActionResult> RunAsync(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
             HttpRequest req, [CosmosDB("ProjetWeb", "Products", ConnectionStringSetting = "CosmosDB")]
             IAsyncCollector<Models.Product> products, ILogger log)

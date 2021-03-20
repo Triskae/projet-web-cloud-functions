@@ -16,7 +16,8 @@ namespace ProjetWeb.Functions.Cart
         [FunctionName("GetCart")]
         public static async Task<IActionResult> RunAsync(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
-            HttpRequest req, ILogger log)
+            HttpRequest req,
+            ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 

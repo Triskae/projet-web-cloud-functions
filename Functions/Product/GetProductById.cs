@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
+using ProjetWeb.Auth;
 using ProjetWeb.Models;
 using ProjetWeb.Models.DTO;
 
 namespace ProjetWeb.Functions.Product
 {
-    public static class GetProductById
+    public class GetProductById : AuthorizedServiceBase
     {
         [FunctionName("GetProductById")]
         public static async Task<IActionResult> Run(
