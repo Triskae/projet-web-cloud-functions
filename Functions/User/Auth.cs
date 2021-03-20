@@ -71,7 +71,7 @@ namespace ProjetWeb.Functions.User
 
             string newPassword = await req.ReadAsStringAsync();
 
-            return new OkObjectResult($"{auth.Username} changed password to {newPassword}");
+            return new OkObjectResult($"{auth.Email} changed password to {newPassword}");
         }
     }
 }

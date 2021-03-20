@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using JWT.Algorithms;
 using JWT.Builder;
 using Microsoft.AspNetCore.Http;
@@ -9,14 +10,14 @@ namespace ProjetWeb.Auth
     public class AuthenticationInfo
     {
         public bool IsValid { get; }
-        public string Username { get; }
+        public string Email { get; }
+        public string Id { get; }
 
         public AuthenticationInfo(HttpRequest request)
         {
             if (!request.Headers.ContainsKey("Authorization"))
             {
                 IsValid = false;
-
                 return;
             }
 
@@ -25,7 +26,6 @@ namespace ProjetWeb.Auth
             if (string.IsNullOrEmpty(authorizationHeader))
             {
                 IsValid = false;
-
                 return;
             }
 
@@ -47,19 +47,18 @@ namespace ProjetWeb.Auth
             catch (Exception exception)
             {
                 IsValid = false;
-
                 return;
             }
 
-            if (!claims.ContainsKey("username"))
+            if (!claims.ContainsKey("email") || !claims.ContainsKey("unique_name"))
             {
                 IsValid = false;
-
                 return;
             }
 
             IsValid = true;
-            Username = Convert.ToString(claims["username"]);
+            Email = Convert.ToString(claims["email"]);
+            Id = Convert.ToString(claims["unique_name"]);
         }
     }
 }
