@@ -20,13 +20,15 @@ namespace ProjetWeb.Functions.Product
     {
         [FunctionName("GetAllProducts")]
         public async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)]
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
             HttpRequest req,
             [CosmosDB("ProjetWeb", "Products", ConnectionStringSetting = "CosmosDB")]
             DocumentClient client,
             ILogger log
         )
         {
+            log.LogInformation("GetAllProducts");
+            
             var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Products");
             IDocumentQuery<Models.Product> query;
 
