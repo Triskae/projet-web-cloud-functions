@@ -19,6 +19,6 @@ namespace ProjetWeb.Models.DTO
         [JsonProperty("orders")] public ICollection<Order> Orders { get; set; }
 
         [JsonProperty("cartid")] public int CartId { get; set; }
-        [JsonProperty("cart")] public Cart Cart { get; set; }
+        [JsonProperty("cart")] public List<Product> Cart { get; set; }
     }
 }

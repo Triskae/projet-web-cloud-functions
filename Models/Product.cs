@@ -23,11 +23,5 @@ namespace ProjetWeb.Models
         public string Fuel { get; set; }
         [JsonProperty("images")]
         public List<string> Images { get; set; }
-
-        public int? OrderId { get; set; }
-        public Order? Order { get; set; }
-
-        public int? CartId { get; set; }
-        public Cart? Cart { get; set; }
     }
 }

@@ -58,11 +58,13 @@ Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
 
 {
-  "email": "filipe.doutelsilva@hotmail.com",
-  "firstname": "Filipe",
-  "lastname": "DOUTEL SILVA",
-  "address": "520 Avenue Janvier Passero",
-  "postalcode": "06210",
-  "city": "MANDELIEU",
-  "password": "Rammstein1998"
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
 }

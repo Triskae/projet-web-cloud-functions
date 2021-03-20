@@ -17,11 +17,7 @@ namespace ProjetWeb.Utils
                 .AsDocumentQuery();
             
             var result = query.ExecuteNextAsync<Models.User>().Result.ToList();
-            if (result.Count == 0)
-            {
-                throw new Exception("Not found file");
-            }
-            return result.First();
+            return result.FirstOrDefault();
         }
     }
 }

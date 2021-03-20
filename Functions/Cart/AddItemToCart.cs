@@ -10,9 +10,11 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using ProjetWeb.Auth;
+using ProjetWeb.Utils;
 
 namespace ProjetWeb.Functions.Cart
 {
@@ -29,13 +31,37 @@ namespace ProjetWeb.Functions.Cart
             ILogger log)
         {
             string bearer = req.Headers["Authorization"];
+            var authHeader = AuthUtils.GetClaims(bearer.Substring(7));
+            Models.User foundUser = UserUtils.GetUserFromEmail(users, authHeader["email"].ToString());
+            if (foundUser == null)
+            {
+                return new UnauthorizedResult();
+            }
             
-            var authHeader = new JwtBuilder()
-                .WithAlgorithm(new HMACSHA256Algorithm())
-                .WithSecret(Constants.SECRET_KEY)
-                .MustVerifySignature()
-                .Decode<IDictionary<string, object>>(bearer.Substring(7));
-            Console.WriteLine(authHeader);
+            var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Users");
+            var queryOptions = new FeedOptions {EnableCrossPartitionQuery = true};
+            var query = users.CreateDocumentQuery<Models.User>(collectionUri, queryOptions);
+            
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var data = JsonConvert.DeserializeObject<Models.Product>(requestBody);
+            var newProduct = new Models.Product
+            {
+                id = data.id,
+                Title = data.Title,
+                Description = data.Description,
+                Price = data.Price,
+                Year = data.Year,
+                HorsePower = data.HorsePower,
+                Mileage = data.Mileage,
+                Fuel = data.Fuel,
+                Images = data.Images
+            };
+            if (foundUser.Cart == null)
+            {
+                foundUser.Cart = new List<Models.Product>();
+            }
+            foundUser.Cart.Add(newProduct);
+            await users.UpsertDocumentAsync(collectionUri, foundUser);
             return new OkObjectResult("OK");
         }
     }

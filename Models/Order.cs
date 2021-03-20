@@ -10,8 +10,5 @@ namespace ProjetWeb.Models
         public bool IsPayed { get; set; }
 
         public ICollection<Product> Products { get; set; }
-
-        public int UserId { get; set; }
-        public User USer { get; set; }
     }
 }
