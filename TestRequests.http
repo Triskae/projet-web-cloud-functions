@@ -30,7 +30,7 @@ POST http://localhost:7071/api/Authenticate
 Content-Type: application/json
 
 {
-  "email": "sorel.nadaud@outlook.com",
+  "email": "filipe.doutelsilva@hotmail.fr",
   "password": "Rammstein1998"
 }
 
@@ -38,6 +38,24 @@ Content-Type: application/json
 
 POST http://localhost:7071/api/RegisterUser
 Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+
+### Cart
+### Add Item to Cart
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
 
 {
   "email": "filipe.doutelsilva@hotmail.com",

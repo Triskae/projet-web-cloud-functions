@@ -11,6 +11,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using ProjetWeb.Auth;
 using ProjetWeb.Models;
+using ProjetWeb.Utils;
 
 namespace ProjetWeb.Functions.User
 {
@@ -39,12 +40,7 @@ namespace ProjetWeb.Functions.User
             Models.User user = null;
             try
             {
-                var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Users");
-                var queryOptions = new FeedOptions {EnableCrossPartitionQuery = true};
-                var query = client.CreateDocumentQuery<Models.User>(collectionUri, queryOptions)
-                    .Where(u => u.Email == credentials.Email)
-                    .AsDocumentQuery();
-                user = query.ExecuteNextAsync<Models.User>().Result.ToList().First();
+                user = UserUtils.GetUserFromEmail(client, credentials.Email);
             }
             catch (Exception e)
             {
