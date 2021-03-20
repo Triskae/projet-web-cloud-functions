@@ -72,8 +72,9 @@ namespace ProjetWeb.Functions.Product
             var maximumPrice = everyProducts.Max(x => x.Price);
 
             return new OkObjectResult(
-                new ProductResponse<List<Models.Product>>(query.ExecuteNextAsync<Models.Product>().Result.ToList(), minimumPrice,
-                    maximumPrice));
+                new BaseResponse<ProductResponse<List<Models.Product>>>(new ProductResponse<List<Models.Product>>(
+                    query.ExecuteNextAsync<Models.Product>().Result.ToList(), minimumPrice,
+                    maximumPrice)));
         }
     }
 }
