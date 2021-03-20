@@ -24,7 +24,7 @@ namespace ProjetWeb.Functions.Cart
             DocumentClient users,
             ILogger log)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
