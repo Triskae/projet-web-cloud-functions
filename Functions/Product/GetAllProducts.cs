@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using ProjetWeb.Auth;
 using ProjetWeb.Models;
+using ProjetWeb.Models.DTO;
 
 namespace ProjetWeb.Functions.Product
 {

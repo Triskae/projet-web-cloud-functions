@@ -5,6 +5,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using ProjetWeb.Models;
+using ProjetWeb.Models.DTO;
 
 namespace ProjetWeb.Functions.Product
 {

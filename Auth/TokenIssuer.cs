@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using JWT;
 using JWT.Algorithms;
+using JWT.Builder;
 using JWT.Serializers;
 using ProjetWeb.Models;
 
@@ -20,16 +22,22 @@ namespace ProjetWeb.Auth
             _base64Encoder = new JwtBase64UrlEncoder();
             _jwtEncoder = new JwtEncoder(_algorithm, _serializer, _base64Encoder);
         }
-        
-        public string IssueTokenForUser(Credentials credentials)
+
+        public string IssueTokenForUser(Credentials credentials, User user)
         {
             Dictionary<string, object> claims = new Dictionary<string, object>
             {
-                { "username", credentials.Email },
-                { "role", "admin"}
+                {"email", credentials.Email},
+                {"unique_name", user.id},
+                {"iat", DateTimeOffset.Now.ToUnixTimeSeconds().ToString()},
+                {"jti", Guid.NewGuid().ToString()}
             };
 
-            string token = _jwtEncoder.Encode(claims, Constants.SECRET_KEY);
+            var token = new JwtBuilder()
+                .WithAlgorithm(new HMACSHA256Algorithm())
+                .WithSecret(Constants.SECRET_KEY)
+                .AddClaims(claims)
+                .Encode();
 
             return token;
         }

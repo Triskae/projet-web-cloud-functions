@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProjetWeb.Models
+namespace ProjetWeb.Models.DTO
 {
     public class BaseResponse<T>
     {

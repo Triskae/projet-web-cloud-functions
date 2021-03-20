@@ -30,9 +30,21 @@ POST http://localhost:7071/api/Authenticate
 Content-Type: application/json
 
 {
-  "user": "filipe",
+  "email": "sorel.nadaud@outlook.com",
   "password": "Rammstein1998"
 }
 
 ### Register user
 
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}

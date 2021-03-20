@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Documents.Client;
@@ -17,11 +18,13 @@ namespace ProjetWeb.Functions.User
     {
         private readonly TokenIssuer _tokenIssuer;
         private readonly IPasswordProvider _passwordProvider;
+        private readonly IMapper _mapper;
 
-        public Auth(TokenIssuer tokenIssuer, IPasswordProvider passwordProvider)
+        public Auth(TokenIssuer tokenIssuer, IPasswordProvider passwordProvider, IMapper mapper)
         {
             _tokenIssuer = tokenIssuer;
             _passwordProvider = passwordProvider;
+            _mapper = mapper;
         }
 
 
@@ -33,24 +36,28 @@ namespace ProjetWeb.Functions.User
             DocumentClient client,
             ILogger log)
         {
-            var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Users");
-            var query = client.CreateDocumentQuery<Models.User>(collectionUri)
-                .Where(u => u.Email == credentials.Email)
-                .AsDocumentQuery();
-            var foundUser = query.ExecuteNextAsync<Models.User>().Result.ToList().First();
-            
-            
-            
-            Console.WriteLine(_passwordProvider.GenerateNewSaltedPassword(credentials?.Password));
-            bool authenticated = credentials?.Email.Equals("filipe", StringComparison.InvariantCultureIgnoreCase) ??
-                                 false;
-
-            if (!authenticated)
+            Models.User user = null;
+            try
             {
-                return new UnauthorizedResult();
+                var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Users");
+                var queryOptions = new FeedOptions {EnableCrossPartitionQuery = true};
+                var query = client.CreateDocumentQuery<Models.User>(collectionUri, queryOptions)
+                    .Where(u => u.Email == credentials.Email)
+                    .AsDocumentQuery();
+                user = query.ExecuteNextAsync<Models.User>().Result.ToList().First();
+            }
+            catch (Exception e)
+            {
+                return new NotFoundResult();
             }
 
-            return new OkObjectResult(_tokenIssuer.IssueTokenForUser(credentials));
+            if (user != null && _passwordProvider.IsValidPassword(credentials.Password, user.Salt,
+                user.Password))
+            {
+                return new OkObjectResult(_tokenIssuer.IssueTokenForUser(credentials, user));
+            }
+
+            return new UnauthorizedResult();
         }
 
         [FunctionName("ChangePassword")]
