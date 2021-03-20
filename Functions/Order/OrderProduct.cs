@@ -2,30 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using JWT.Algorithms;
-using JWT.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Azure.Documents.Client;
-using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using ProjetWeb.Auth;
 using ProjetWeb.Utils;
 
-namespace ProjetWeb.Functions.Cart
+namespace ProjetWeb.Functions.Order
 {
-    public class AddItemToCart : AuthorizedServiceBase
+    public class OrderProduct : AuthorizedServiceBase
     {
-        [FunctionName("AddItemToCart")]
+        [FunctionName("OrderProduct")]
         public static async Task<IActionResult> RunAsync(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]
             HttpRequest req,
-            [CosmosDB("ProjetWeb", "Products", ConnectionStringSetting = "CosmosDB")]
-            DocumentClient products,
             [CosmosDB("ProjetWeb", "Users", ConnectionStringSetting = "CosmosDB")]
             DocumentClient users,
             ILogger log)
@@ -58,9 +52,14 @@ namespace ProjetWeb.Functions.Cart
             };
             if (foundUser.Cart == null)
             {
-                foundUser.Cart = new List<Models.Product>();
+                foundUser.Orders = new List<Models.Order>();
+                foundUser.Orders.Add(new Models.Order
+                {
+                    Products = newProduct,
+                    IsPayed = true,
+                    OrderPlacedDate = DateTime.Now
+                });
             }
-            foundUser.Cart.Add(newProduct);
             await users.UpsertDocumentAsync(collectionUri, foundUser);
             return new OkObjectResult("OK");
         }
