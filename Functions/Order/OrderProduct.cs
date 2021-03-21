@@ -64,7 +64,7 @@ namespace ProjetWeb.Functions.Order
             foundUser.Orders.Add(new Models.Order
             {
                 id = Guid.NewGuid().ToString(),
-                Products = newProduct,
+                Product = newProduct,
                 IsPayed = true,
                 OrderPlacedDate = DateTime.Now
             });
