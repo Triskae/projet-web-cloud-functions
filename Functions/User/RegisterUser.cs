@@ -53,12 +53,12 @@ namespace ProjetWeb.Functions.User
             {
                 var conflictResponse = new BaseResponse<object>();
                 conflictResponse.Errors.Add("Cet adresse email est déjà utilisée par un autre compte, veuillez en utiliser une autre.");
-                var unauthorizedResult = new OkObjectResult(conflictResponse)
+                var conflictResult = new OkObjectResult(conflictResponse)
                 {
                     StatusCode = StatusCodes.Status409Conflict
                 };
 
-                return unauthorizedResult;
+                return conflictResult;
             }
         }
     }
