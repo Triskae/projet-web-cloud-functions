@@ -47,11 +47,18 @@ namespace ProjetWeb.Functions.User
                     Password = saltAndHash.PasswordHashed,
                 };
                 await users.AddAsync(userToRegister);
-                return new OkObjectResult(_mapper.Map<UserDto>(userToRegister));
+                return new OkObjectResult(new BaseResponse<UserDto>(_mapper.Map<UserDto>(userToRegister)));
             }
             catch (Exception ex)
             {
-                return new ConflictResult();
+                var conflictResponse = new BaseResponse<object>();
+                conflictResponse.Errors.Add("Cet adresse email est déjà utilisée par un autre compte, veuillez en utiliser une autre.");
+                var unauthorizedResult = new OkObjectResult(conflictResponse)
+                {
+                    StatusCode = StatusCodes.Status409Conflict
+                };
+
+                return unauthorizedResult;
             }
         }
     }
