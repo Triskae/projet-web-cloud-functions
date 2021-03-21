@@ -1,16 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
+using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Documents.Client;
-using Microsoft.Azure.Documents.Linq;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using ProjetWeb.Auth;
 using ProjetWeb.Models;
 using ProjetWeb.Models.DTO;
@@ -20,9 +18,9 @@ namespace ProjetWeb.Functions.User
 {
     public class Auth
     {
-        private readonly TokenIssuer _tokenIssuer;
-        private readonly IPasswordProvider _passwordProvider;
         private readonly IMapper _mapper;
+        private readonly IPasswordProvider _passwordProvider;
+        private readonly TokenIssuer _tokenIssuer;
 
         public Auth(TokenIssuer tokenIssuer, IPasswordProvider passwordProvider, IMapper mapper)
         {
@@ -70,6 +68,8 @@ namespace ProjetWeb.Functions.User
         public async Task<IActionResult> ChangePassword(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)]
             HttpRequest req,
+            [CosmosDB("ProjetWeb", "Users", ConnectionStringSetting = "CosmosDB")]
+            DocumentClient users,
             ILogger log)
         {
             AuthenticationInfo auth = new AuthenticationInfo(req);
@@ -79,9 +79,39 @@ namespace ProjetWeb.Functions.User
                 return new UnauthorizedResult();
             }
 
-            string newPassword = await req.ReadAsStringAsync();
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            var data = JsonConvert.DeserializeObject<ChangePasswordDto>(requestBody);
 
-            return new OkObjectResult(new BaseResponse<string>($"{auth.Email} changed password to {newPassword}"));
+            Models.User foundUser = UserUtils.GetUserFromEmail(users, auth.Email);
+            if (foundUser == null)
+            {
+                return new UnauthorizedResult();
+            }
+
+            var isOldPasswordValid =
+                _passwordProvider.IsValidPassword(data.OldPassword, foundUser.Salt, foundUser.Password);
+
+            if (!isOldPasswordValid)
+            {
+                var notFoundResponse = new BaseResponse<object>();
+                notFoundResponse.Errors.Add("L'ancien mot de passe n'est pas valide!");
+                var notFoundResult = new OkObjectResult(notFoundResponse)
+                {
+                    StatusCode = StatusCodes.Status401Unauthorized
+                };
+
+                return notFoundResult;
+            }
+
+            var newPasswordAndSalt = _passwordProvider.GenerateNewSaltedPassword(data.NewPassword);
+            var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Users");
+            var query = users.CreateDocumentQuery<Models.User>(collectionUri);
+
+            foundUser.Salt = newPasswordAndSalt.Salt;
+            foundUser.Password = newPasswordAndSalt.PasswordHashed;
+
+            await users.UpsertDocumentAsync(collectionUri, foundUser);
+            return new OkObjectResult(new BaseResponse<object>());
         }
     }
 }

@@ -52,6 +52,17 @@ GET http://localhost:7071/api/Me
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
+### Change password
+
+POST http://localhost:7071/api/ChangePassword
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "oldPassword": "Rammstein1998",
+  "newPassword": "Rammstein1998@"
+}
+
 
 ### Update user
 
