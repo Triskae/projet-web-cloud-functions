@@ -31,11 +31,11 @@ namespace ProjetWeb.Functions.Order
             {
                 return new UnauthorizedResult();
             }
-            
+
             var collectionUri = UriFactory.CreateDocumentCollectionUri("ProjetWeb", "Users");
             var queryOptions = new FeedOptions {EnableCrossPartitionQuery = true};
             var query = users.CreateDocumentQuery<Models.User>(collectionUri, queryOptions);
-            
+
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             var data = JsonConvert.DeserializeObject<Models.Product>(requestBody);
             var newProduct = new Models.Product
@@ -60,8 +60,9 @@ namespace ProjetWeb.Functions.Order
                     OrderPlacedDate = DateTime.Now
                 });
             }
+
             await users.UpsertDocumentAsync(collectionUri, foundUser);
-            return new OkObjectResult("OK SOREL");
+            return new OkObjectResult("OK");
         }
     }
 }
