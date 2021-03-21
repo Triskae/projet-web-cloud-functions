@@ -49,11 +49,18 @@ Content-Type: application/json
   "password": "Rammstein1998"
 }
 
+### Get Me
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+
 
 ### Cart
 ### Add Item to Cart
 
-POST http://localhost:7071/api/AddItemToCart
+POST http://localhost:7071/api/OrderProduct
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
 
