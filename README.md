@@ -4,8 +4,8 @@
 
 ## Architecture du projet
 
- - React en front
- - Des clouds functions en back, hébergées sur Azure (codées en .Net Core 3.1)
+ - Angular 11 pour le front-end
+ - Des clouds functions en back, hébergées sur Azure (.NET Core 3.1)
  - Une base de données orientées documents CosmosDB hébergée sur Azure
 
 ## Ressources/tutos utilisés
