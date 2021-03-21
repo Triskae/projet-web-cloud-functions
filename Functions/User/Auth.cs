@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +13,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using ProjetWeb.Auth;
 using ProjetWeb.Models;
+using ProjetWeb.Models.DTO;
 using ProjetWeb.Utils;
 
 namespace ProjetWeb.Functions.User
@@ -50,10 +53,17 @@ namespace ProjetWeb.Functions.User
             if (user != null && _passwordProvider.IsValidPassword(credentials.Password, user.Salt,
                 user.Password))
             {
-                return new OkObjectResult(_tokenIssuer.IssueTokenForUser(credentials, user));
+                return new OkObjectResult(new BaseResponse<string>(_tokenIssuer.IssueTokenForUser(credentials, user)));
             }
 
-            return new UnauthorizedResult();
+            var unauthorizedResponse = new BaseResponse<object>();
+            unauthorizedResponse.Errors.Add("Email ou mot de passe incorrect, veuiller réessayer.");
+            var unauthorizedResult = new OkObjectResult(unauthorizedResponse)
+            {
+                StatusCode = StatusCodes.Status401Unauthorized
+            };
+
+            return unauthorizedResult;
         }
 
         [FunctionName("ChangePassword")]
@@ -71,7 +81,7 @@ namespace ProjetWeb.Functions.User
 
             string newPassword = await req.ReadAsStringAsync();
 
-            return new OkObjectResult($"{auth.Email} changed password to {newPassword}");
+            return new OkObjectResult(new BaseResponse<string>($"{auth.Email} changed password to {newPassword}"));
         }
     }
 }

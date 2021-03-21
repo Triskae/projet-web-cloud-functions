@@ -49,7 +49,7 @@ namespace ProjetWeb.Functions.Product
                                   ? string.Empty
                                   : filter.Keyword.ToLower())) &&
                              (filter.LowerPriceLimit == 0 || p.Price >= filter.LowerPriceLimit) &&
-                             (filter.UpperPriceLimit == 0 || p.Price <= filter.LowerPriceLimit)
+                             (filter.UpperPriceLimit == 0 || p.Price <= filter.UpperPriceLimit)
                     )
                     .AsDocumentQuery();
             }

@@ -14,6 +14,6 @@ namespace ProjetWeb.Models.DTO
         
         public T Data { get; set; }
         
-        public List<Exception> Errors { get; set; } = new List<Exception>();
+        public List<string> Errors { get; set; } = new List<string>();
     }
 }
