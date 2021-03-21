@@ -53,6 +53,12 @@ namespace ProjetWeb.Functions.Order
             if (foundUser.Orders == null)
             {
                 foundUser.Orders = new List<Models.Order>();
+                foundUser.Orders.Add(new Models.Order
+                {
+                    Product = newProduct,
+                    IsPayed = true,
+                    OrderPlacedDate = DateTime.Now
+                });
             }
 
             foundUser.Orders.Add(new Models.Order

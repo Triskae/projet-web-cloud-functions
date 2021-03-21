@@ -9,6 +9,6 @@ namespace ProjetWeb.Models
         public DateTime OrderPlacedDate { get; set; }
         public bool IsPayed { get; set; }
 
-        public Product Products { get; set; }
+        public Product Product { get; set; }
     }
 }
