@@ -8,6 +8,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using ProjetWeb.Auth;
+using ProjetWeb.Models.DTO;
 using ProjetWeb.Utils;
 
 namespace ProjetWeb.Functions.User
@@ -43,7 +44,7 @@ namespace ProjetWeb.Functions.User
             foundUser.City = data.City;
 
             await users.UpsertDocumentAsync(collectionUri, foundUser);
-            return new OkObjectResult("OK");
+            return new OkObjectResult(new BaseResponse<Models.User>(foundUser));
         }
     }
 }
