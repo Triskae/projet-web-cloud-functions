@@ -15,9 +15,7 @@ namespace ProjetWeb.Models
         [JsonProperty("password")] public string Password { get; set; }
         [JsonProperty("postalcode")] public string PostalCode { get; set; }
         [JsonProperty("city")] public string City { get; set; }
-        [JsonProperty("avatar")] public string Avatar { get; set; }
 
         [JsonProperty("orders")] public List<Order> Orders { get; set; }
-        [JsonProperty("cart")] public List<Product> Cart { get; set; }
     }
 }

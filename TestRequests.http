@@ -40,12 +40,9 @@ POST http://localhost:7071/api/RegisterUser
 Content-Type: application/json
 
 {
-  "email": "filipe.doutelsilva@hotmail.com",
+  "email": "filipe.doutelsilva@hotmail.fr",
   "firstname": "Filipe",
   "lastname": "DOUTEL SILVA",
-  "address": "520 Avenue Janvier Passero",
-  "postalcode": "06210",
-  "city": "MANDELIEU",
   "password": "Rammstein1998"
 }
 
@@ -54,6 +51,22 @@ Content-Type: application/json
 GET http://localhost:7071/api/Me
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
+
+
+### Update user
+
+GET http://localhost:7071/api/UpdateUser
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "id": "2dd38e21-6e2e-4b8e-85a9-e1446a660c5e",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU"
+}
 
 
 

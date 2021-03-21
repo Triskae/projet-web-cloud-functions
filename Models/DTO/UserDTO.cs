@@ -13,12 +13,8 @@ namespace ProjetWeb.Models.DTO
         [JsonProperty("address")] public string Address { get; set; }
         [JsonProperty("postalcode")] public string PostalCode { get; set; }
         [JsonProperty("city")] public string City { get; set; }
-        [JsonProperty("avatar")] public string Avatar { get; set; }
         [JsonProperty("password")] public string Password { get; set; }
 
         [JsonProperty("orders")] public ICollection<Order> Orders { get; set; }
-
-        [JsonProperty("cartid")] public int CartId { get; set; }
-        [JsonProperty("cart")] public List<Product> Cart { get; set; }
     }
 }
