@@ -5,7 +5,6 @@ using System.Security.Authentication;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs.Host;
 
 namespace ProjetWeb.Auth
