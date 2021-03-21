@@ -61,7 +61,7 @@ namespace ProjetWeb.Functions.Order
                 });
             }
             await users.UpsertDocumentAsync(collectionUri, foundUser);
-            return new OkObjectResult("OK");
+            return new OkObjectResult("OK SOREL");
         }
     }
 }
