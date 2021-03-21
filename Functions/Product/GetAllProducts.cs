@@ -49,7 +49,9 @@ namespace ProjetWeb.Functions.Product
                                   ? string.Empty
                                   : filter.Keyword.ToLower())) &&
                              (filter.LowerPriceLimit == 0 || p.Price >= filter.LowerPriceLimit) &&
-                             (filter.UpperPriceLimit == 0 || p.Price <= filter.UpperPriceLimit)
+                             (filter.UpperPriceLimit == 0 || p.Price <= filter.UpperPriceLimit) &&
+                             (filter.LowerHorsepowerLimit == 0 || p.HorsePower >= filter.LowerHorsepowerLimit) &&
+                             (filter.UpperHorsepowerLimit == 0 || p.HorsePower <= filter.UpperHorsepowerLimit)
                     )
                     .AsDocumentQuery();
             }
@@ -70,11 +72,13 @@ namespace ProjetWeb.Functions.Product
 
             var minimumPrice = everyProducts.Min(x => x.Price);
             var maximumPrice = everyProducts.Max(x => x.Price);
+            var minimumHorsepower = everyProducts.Min(x => x.HorsePower);
+            var maximumHorsepower = everyProducts.Max(x => x.HorsePower);
 
             return new OkObjectResult(
                 new BaseResponse<ProductResponse<List<Models.Product>>>(new ProductResponse<List<Models.Product>>(
                     query.ExecuteNextAsync<Models.Product>().Result.ToList(), minimumPrice,
-                    maximumPrice)));
+                    maximumPrice, minimumHorsepower, maximumHorsepower)));
         }
     }
 }
