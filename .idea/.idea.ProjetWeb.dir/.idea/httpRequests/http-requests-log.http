@@ -1,0 +1,741 @@
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+<> 2021-03-21T185151.200.json
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T185147.200.txt
+
+###
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+<> 2021-03-21T185138.200.json
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T185104.200.txt
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T184956.200.txt
+
+###
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+<> 2021-03-21T184729.200.json
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T184725.200.txt
+
+###
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MzQ4NzkzIiwianRpIjoiNDQyZjZhY2QtZTQzMi00OWJjLWFmOGQtNjQ0MGE5MzY2MzA0In0.ErpbcdhcM0-8TouxFYprEeyncBr7EEx3dNVBmO77PLY
+
+<> 2021-03-21T184715.200.json
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-21T184633.200.json
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-21T184550.409.json
+
+###
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+<> 2021-03-21T184529.200.json
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T184526.200.txt
+
+###
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+<> 2021-03-21T184315.200.json
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T184312.200.txt
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T184311.200.txt
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T184308.200.txt
+
+###
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+<> 2021-03-21T184246.200.json
+
+###
+
+POST http://localhost:7071/api/OrderProduct
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-21T184228.200.txt
+
+###
+
+GET http://localhost:7071/api/Me
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+<> 2021-03-21T184142.200.json
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-21T184012.200.json
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+<> 2021-03-20T192920.200.txt
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "id": "ea285e88-1f39-4e64-850a-19a613e6af0d",
+  "title": "Mercedes-Benz 560 SEC",
+  "description": "Symbole d'élégance et de performance dans les années 80, la 560 SEC est aujourd'hui devenue la youngtimer de luxe par excellence. Ce coupé V8 n’attend plus que vos enchères !",
+  "price": 1050000,
+  "year": "1986",
+  "horsePower": 300,
+  "mileage": 189837,
+  "fuel": "Essence",
+  "images": ["https://benzin.fr/storage/lead/original/img_604696816714f.jpg", "https://benzin.fr/storage/lead/original/img_604696aea95fb.jpg", "https://benzin.fr/storage/lead/original/img_604696b329146.jpg"]
+}
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T184239.200.txt
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T184222.200.txt
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T184127.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T181827.200.txt
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T173020.200.txt
+
+###
+
+POST http://localhost:7071/api/AddItemToCart
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImZpbGlwZS5kb3V0ZWxzaWx2YUBob3RtYWlsLmZyIiwidW5pcXVlX25hbWUiOiIyZGQzOGUyMS02ZTJlLTRiOGUtODVhOS1lMTQ0NmE2NjBjNWUiLCJpYXQiOiIxNjE2MjU3NjM0IiwianRpIjoiMzcyZjExZjYtOTcxYS00ZDg5LWI4MzQtN2YzNTkxOGU0ZjExIn0.bn-9PDxaRxXz-SRd4tLt_27YmHXWj4oZG9uZDcMkTsQ
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T172900.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T172714.200.txt
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T160120.200.json
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.com",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T155604.200.json
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T155055.200.json
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "email": "filipe.doutelsilva@hotmail.fr",
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T155034.200.json
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T154857.200.json
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T154432.200.json
+
+###
+
+POST http://localhost:7071/api/RegisterUser
+Content-Type: application/json
+
+{
+  "firstname": "Filipe",
+  "lastname": "DOUTEL SILVA",
+  "address": "520 Avenue Janvier Passero",
+  "postalcode": "06210",
+  "city": "MANDELIEU",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T152908.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T134715.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T132809.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T132422.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T131110.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T125148.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+<> 2021-03-20T125128.200.txt
+
+###
+
+POST http://localhost:7071/api/Authenticate
+Content-Type: application/json
+
+{
+  "email": "sorel.nadaud@outlook.com",
+  "password": "Rammstein1998"
+}
+
+###
+

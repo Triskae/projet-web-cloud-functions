@@ -50,16 +50,17 @@ namespace ProjetWeb.Functions.Order
                 Fuel = data.Fuel,
                 Images = data.Images
             };
-            if (foundUser.Cart == null)
+            if (foundUser.Orders == null)
             {
                 foundUser.Orders = new List<Models.Order>();
-                foundUser.Orders.Add(new Models.Order
-                {
-                    Products = newProduct,
-                    IsPayed = true,
-                    OrderPlacedDate = DateTime.Now
-                });
             }
+
+            foundUser.Orders.Add(new Models.Order
+            {
+                Products = newProduct,
+                IsPayed = true,
+                OrderPlacedDate = DateTime.Now
+            });
 
             await users.UpsertDocumentAsync(collectionUri, foundUser);
             return new OkObjectResult("OK");

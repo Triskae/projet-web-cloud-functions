@@ -12,7 +12,6 @@ namespace ProjetWeb.Auth
         public PasswordAndSalt GenerateNewSaltedPassword(string clearPassword)
         {
             var salt = GetNewSalt();
-            Console.WriteLine(salt);
             var passwordHashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
                 password: clearPassword,
                 salt: Encoding.UTF8.GetBytes(salt),
@@ -23,16 +22,6 @@ namespace ProjetWeb.Auth
             return new PasswordAndSalt(passwordHashed, salt);
         }
 
-        private string GetNewSalt()
-        {
-            byte[] salt = new byte[128 / 8];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
-            return Convert.ToBase64String(salt);
-        }
-        
         public bool IsValidPassword(string supposedClearHistoricPassword, string dbSalt, string dbHashedPassword)
         {
             var passwordHashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
@@ -43,6 +32,17 @@ namespace ProjetWeb.Auth
                 numBytesRequested: 256 / 8));
 
             return dbHashedPassword.Equals(passwordHashed);
+        }
+
+        private string GetNewSalt()
+        {
+            byte[] salt = new byte[128 / 8];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(salt);
+            }
+
+            return Convert.ToBase64String(salt);
         }
     }
 }
